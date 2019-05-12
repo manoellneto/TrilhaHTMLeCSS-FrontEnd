@@ -1,44 +1,33 @@
-// var tdPeso = document.getElementById("peso-2");
-// var tdAltura = document.getElementById("altura-2");
-
-// var peso2 = tdPeso.textContent;
-// var altura2 = tdAltura.textContent;
-
-// var paciente2 = { "peso" : peso2, "altura" : altura2 };
-
-// var tdPeso = document.getElementById("peso-1");
-// var tdAltura = document.getElementById("altura-1");
-
-// var peso1 = tdPeso.textContent;
-// var altura1 = tdAltura.textContent;
-
-// var paciente1 = { "peso" : peso1, "altura" : altura1 };
-
-// var pacientes = [paciente1, paciente2]
-
-var trsPacientes = document.getElementsByClassName("paciente");
+var botao = document.getElementById("calcula-imcs");
+botao.addEventListener("click", function() {
     
-for(var posicaoAtual = 0; posicaoAtual <= trsPacientes.length -1; posicaoAtual++){    
-    var pacienteTr = trsPacientes[posicaoAtual];
-
-    var tdNome = pacienteTr.getElementsByClassName("info-nome")[0];
-    var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0];
-    var tdAltura = pacienteTr.getElementsByClassName("info-altura")[0];
-    
-
-    var paciente = { nome : tdNome.textContent, peso : tdPeso.textContent, altura : tdAltura.textContent };
-    
-    if (paciente.altura !=0) {
-
-        var imc = paciente.peso / (paciente.altura * paciente.altura);
-    
+    var trsPacientes = document.getElementsByClassName("paciente");
         
+    percorreArray(trsPacientes, function(pacienteTr) {
+        var tdNome = pacienteTr.getElementsByClassName("info-nome")[0];
+        var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0];
+        var tdAltura = pacienteTr.getElementsByClassName("info-altura")[0];
+            
+        var pacienteAtual = {nome : tdNome.textContent, 
+                            peso : tdPeso.textContent, 
+                            altura : tdAltura.textContent,
+                            pegaImc : function(){
+                                if (this.altura !=0) {
+    
+                                    var imc = this.peso / (this.altura * this.altura);
+                                    return imc;
+    
+                                } else {
+                                
+                                    console.log("Altura n pode ser igual a 0");
+                                }
+                            }};
+        
+        var imc = pacienteAtual.pegaImc();
+    
         var tdImc = pacienteTr.getElementsByClassName("info-imc")[0];
         tdImc.textContent = imc;
-        console.log(imc);
-    
-    } else {
-    
-        console.log("Altura n pode ser igual a 0");
-    }
-}
+    console.log(imc);
+    });
+
+});
