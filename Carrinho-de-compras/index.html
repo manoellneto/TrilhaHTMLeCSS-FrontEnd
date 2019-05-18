@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="carrinho.css" >
+</head>
+<body>
+    <div class="carrinho">
+        <h2>Carinho entrega em Aracaju</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Nome</td>
+                    <td>Quantidaade</td>
+                    <td>Valor</td>
+                    <td>Total</td>
+                    <td>Ações</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <img src="imagens/ipod.jpg"> </td>
+                    <td>Ipad</td>
+                    <td>1</td>
+                    <td>2499.99</td>
+                    <td class="item-total">2499.99</td>
+                    <td><a class="remove-item" href="">(remover)</a></td>
+                </tr>
+                <tr>
+                    <td> <img src="imagens/redmi.jpg"> </td>
+                    <td>Xiaomi</td>
+                    <td>10</td>
+                    <td>1000</td>
+                    <td class="item-total">10000</td>
+                    <td><a class="remove-item" href="">(remover)</a></td>
+                </tr>
+                <tr>
+                    <td> <img src="imagens/fone.jpg"> </td>
+                    <td>Fone de ouvido</td>
+                    <td>1</td>
+                    <td>299.99</td>
+                    <td class="item-total">299.99</td>
+                    <td><a class="remove-item" href="">(remover)</a></td>
+                </tr>
+                <tr>
+                    <td> <img src="imagens/note.jpg"> </td>
+                    <td>Notebook</td>
+                    <td>3</td>
+                    <td>1499.99</td>
+                    <td class="item-total">4497.00</td>
+                    <td><a class="remove-item" href="">(remover)</a></td>
+                </tr>
+                <tr>
+                    <td> <img src="imagens/iphone-xr.jpg"> </td>
+                    <td>Iphone Xr</td>
+                    <td>1</td>
+                    <td>4499.99</td>
+                    <td class="item-total">4499.99</td>
+                    <td><a class="remove-item" href="">(remover)</a></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <input type="button" value="Undo" id="undo">
+    </div>
+
+    <div>
+        Valor total: R$ <span id="valor-total">0</span>
+        <br/>
+        Quantidade de itens: <span id="quantidade-de-itens">0</span>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="carrinho.js"></script>
+
+    <script>
+    
+    </script>
+</body>
+</html>
