@@ -41,6 +41,9 @@ td {
     background: #FE0;
 }
 
+.hovering {
+    background: #ccc;
+}
 .propaganda td {
     background: #9F0;
     padding: 1em 0.5em;
@@ -50,6 +53,9 @@ td {
     font-style: italic;
 }
 
+#mostra-propagandas {
+    display: none;
+}
 .remove-item {
     background: #F30;
     border-radius: 2px;
@@ -58,7 +64,7 @@ td {
     text-decoration: none;
     text-transform: uppercase;
 
-    display: inline-block;
+    display: none;
     padding: 0.5em;
 }
 
