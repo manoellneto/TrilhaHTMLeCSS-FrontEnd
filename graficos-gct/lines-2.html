@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+       
+       google.charts.load('visualization', {'packages' : ['corechart']});
+       google.charts.setOnLoadCallback(desenhaGrafico);
+
+        function desenhaGrafico () {
+            var dados = new google.visualization.DataTable();
+            dados.addColumn('date', 'Dia');
+            dados.addColumn('number', 'Conta Corrente');
+            dados.addColumn('number', 'Conta Investimento');
+
+            dados.addRows(6);
+
+            dados.setValue(0, 0, new Date(2019, 01, 07));
+            dados.setValue(0, 1, 850.0);
+            dados.setValue(0, 2, 400.25);
+
+            dados.setValue(1, 0, new Date(2019, 01, 08));
+            dados.setValue(1, 1, 1850.0);
+            dados.setValue(1, 2, 1400.25);
+
+            dados.setValue(2, 0, new Date(2019, 01, 09));
+            dados.setValue(2, 1, 2850.0);
+            dados.setValue(2, 2, 2400.25);
+
+            dados.setValue(3, 0, new Date(2019, 01, 10));
+            dados.setValue(3, 1, 3850.0);
+            dados.setValue(3, 2, 3400.25);
+
+            dados.setValue(4, 0, new Date(2019, 01, 11));
+            dados.setValue(4, 1, 4850.0);
+            dados.setValue(4, 2, 5400.25);
+
+            dados.setValue(5, 0, new Date(2019, 01, 12));
+            dados.setValue(5, 1, 6850.0);
+            dados.setValue(5, 2, 7400.25);
+
+            var formatter = new google.visualization.DateFormat({
+                pattern: 'dd/MM/yyyy'
+            });
+            formatter.format(dados, 0);
+
+
+            var div = document.getElementById('chart_div');
+            var grafico = new google.visualization.LineChart(div);
+            grafico.draw(dados, {widht: 700, height: 340, title: 'Minhas contas'})
+
+
+        };
+    </script>
+    <title>GCT 2 Aula - Grafico</title>
+</head>
+<body>
+
+  <H1>Saldo das Contas</H1>
+  <div id="chart_div"></div>
+
+
+    
+</body>
+</html>
